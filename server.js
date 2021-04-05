@@ -11,12 +11,35 @@ if(PORT == null || PORT==""){
 let data = []
 
 app.get('/', (req,res) => {
+
     res.status("200").send(" '/' WebSite Data")
 })
 
-app.post('/submit', (req,res) => {
+app.get('/posts', (req,res) => {
+
+    res.status("200").send("Here's some posts")
+})
+
+// Register
+
+// Login
+
+// Logout
+
+app.post('/create', (req,res) => {
     console.log(req.body.test);
-    res.status("200").send("Received!")
+
+    res.status("201").send("Received!")
+})
+
+app.put('/update', (req,res) => {
+
+    res.status("201").send("Update Success!")
+})
+
+app.delete('/delete', (req,res) => {
+
+    res.status("200").send("Post Delete Successful!")
 })
 
 app.listen(PORT, () => {
